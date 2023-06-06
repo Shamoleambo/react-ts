@@ -11,10 +11,8 @@ function App() {
     setTodos((prevState) => [...prevState, newTodo])
   }
 
-  const removeTodoHandler = (event: React.MouseEvent): void => {
-    const target = event.target as HTMLUListElement
-
-    setTodos((prevState) => prevState.filter((todo) => todo.id !== target.id))
+  const removeTodoHandler = (todoId: string): void => {
+    setTodos((prevState) => prevState.filter((todo) => todo.id !== todoId))
   }
 
   return (

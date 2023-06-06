@@ -5,7 +5,7 @@ import classes from './Todos.module.css'
 
 const Todos: React.FC<{
   items: Todo[]
-  onRemoveTodo: (event: React.MouseEvent) => void
+  onRemoveTodo: (todoId: string) => void
 }> = (props) => {
   return (
     <ul className={classes.todos}>
@@ -14,7 +14,7 @@ const Todos: React.FC<{
           key={item.id}
           todoText={item.text}
           todoId={item.id}
-          onRemoveTodo={props.onRemoveTodo}
+          onRemoveTodo={props.onRemoveTodo.bind(null, item.id)}
         />
       ))}
     </ul>
