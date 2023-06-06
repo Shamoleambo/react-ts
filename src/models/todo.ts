@@ -3,7 +3,7 @@ class Todo {
   text: string
 
   constructor(text: string) {
-    this.id = new Date().toString()
+    this.id = Math.random().toString()
     this.text = text
   }
 }
